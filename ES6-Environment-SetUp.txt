@@ -1,0 +1,90 @@
+
+ES6 is not compatible with many browsers but es5 is compatible hence we need to convert ES6 to ES5
+this can be done with the help of Babel or typescript or Traceur etc..
+There are many online ES6 live code editors as REPL:
+1.Babel (Most Popular)
+
+2.CodePen 
+
+3.ES6 console
+
+
+
+
+
+INSTALL Node.js
+
+npm -v(to check version)
+
+Create a folder by any name(eg..Folder1,test-demo) 
+Create a package.json file inside it
+
+Go to folder path using npm command prompt using cd
+Type: npm init --y
+
+the package.json will be initiated with
+
+{
+  "name": "test-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+after excecuting the command.
+ the code will be filled in package.json
+package-lock.json will be created
+
+
+
+
+type following command to setup babel
+npm install babel-cli babel-preset-es2015 --save-dev
+add below line to package.json
+
+  "scripts":{
+      "build":"babel --presets es2015 src -d dist"
+  },
+
+
+then package.json looks like
+
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts":{
+      "build":"babel --presets es2015 src -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
+
+create .babelrc file
+and add:
+{
+    "presets": [
+        "es2015"
+    ]
+}
+
+create dist folder
+create a file by name main.js
+create src folder
+main.js
+
+
+right code on main.js inside src folder and save it
+
+npm run build
